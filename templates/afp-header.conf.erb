@@ -1,0 +1,40 @@
+#
+# Netatalk 3.x configuration file
+#
+
+# Global server settings
+[Global]
+  # Show share with Xserver icon
+  mimic model = Xserve
+
+  # AFP share hostname
+  hostname = <%= @hostname %>
+
+  # Log files settings
+  log level = default:note
+  log file = /var/log/netatalk.log
+
+  # UAMs used
+  uam list = uams_dhx.so,uams_dhx2.so
+
+  # Enables or disables the ability of clients to save passwords locally. VERJETNO NE DELA
+  save password = yes
+
+  # Enables or disables the ability of clients to change their passwords via chooser or the "connect to server" dialog. VERJETNO NE DELA
+  set password = yes
+
+  # Whether to provide AFP runtime statistics (connected users, open volumes) via dbus.
+  afpstats = yes
+
+  # Set default values for volumes
+  vol preset = default_for_all_vol
+
+  # Keep sleeping AFP sessions for number hours before disconnecting clients in sleep mode.
+  sleep time = 24
+
+  # Maximum possible entries in the directory cache. The cache stores directories and files. It is used to cache the full path to directories and CNIDs which considerably speeds up directory enumeration.
+  dircachesize = 131072
+
+[default_for_all_vol]
+  file perm = 0600
+  directory perm = 0700

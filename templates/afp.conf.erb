@@ -1,0 +1,8 @@
+[<%= @title %>]
+  path = <%= @path %>
+  valid users = <% @valid_users.each do |v_u| -%><%= v_u -%> <% end %>
+  time machine = <%= @time_machine %>
+  vol size limit = <%= @size %>
+  <%- if @test_example -%>
+  test = <%= @test_example %>
+  <%- end -%>
