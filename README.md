@@ -15,10 +15,10 @@ class {'netatalk::install': }
 #### Configuration
 * `hostname` specifies the name of the server clients will see
 * `users` hash containing all the users
-  * `user` is the username, client will use to logon
-  * `valid_users` is an array of users, that have access to a share
-  * `time_machine` tells the server if time machine should be enabled for this share
-  * `size` is the size of the share in MB
+  * `user` is the username, client will use to logon (default: same as resource title)
+  * `valid_users` is an array of users, that have access to a share (default: user only)
+  * `time_machine` tells the server if time machine should be enabled for this share (default: true)
+  * `size` is the size of the share in MB (default: 1TB)
 
 ```puppet
 class { 'netatalk::config':
